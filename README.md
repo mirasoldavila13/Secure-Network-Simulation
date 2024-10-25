@@ -257,7 +257,32 @@ For each system, the following commands were used:
 ---
 4. **Create a New User on the Web Server**  
    Add a new user with a chosen username and password on the web server.
+#### **Solution: Create a New User on the Web Server**
 
+1. **Logged in as Root:**  
+   - Already logged in as the `root` user on the web server.
+
+2. **Add New User:**  
+   - Executed the command:  
+     ```bash
+     useradd mirasol
+     ```
+   - Verified the creation of the user by checking `/etc/passwd` using:  
+     ```bash
+     cat /etc/passwd
+     ```
+   - The output showed that the `mirasol` user was successfully created (see the last line).  
+     ![New User Created](images/web-server/webserver_created_new_user_mirasol.png)
+
+3. **Set Password, Logout, and Login as New User:**  
+   - All the steps for setting the password, logging out from the root session, logging in as the new user `mirasol`, and verifying the login are captured in the following screenshot:
+     1. **Set Password:** Used the `passwd mirasol` command to assign a password to the new user.
+     2. **Logout:** Logged out of the `root` session.
+     3. **Login:** Logged in as `mirasol` with the new credentials.
+     4. **Verify:** Executed `whoami` to confirm the current user is `mirasol`.  
+   
+   ![Logged in as Mirasol](images/web-server/webserver_mirasol_login.png)
+---
 5. **Perform Port Scans Using Nmap**  
    Use Nmap from a Kali Linux machine to scan the DNS and Web servers. Document all open ports and associated protocols.
 
