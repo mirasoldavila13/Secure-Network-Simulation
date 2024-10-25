@@ -107,6 +107,91 @@ Once the new network is installed, your task is to **document configurations** a
    - Web Server  
    - DNS Server
 
+---
+
+#### **Solution: Document IP Configuration**
+
+> **Note:** The `ip addr` command was used to retrieve the **IP address**, and the `ifconfig` command was used to verify both the **IP address** and **subnet mask** where necessary.
+
+For each system, the following commands were used:
+- **OS Version:** `lsb_release -a` or `cat /etc/*rel*` (depending on the OS).
+- **IP Address:** `ip addr` or `ifconfig`.
+- **Subnet Mask:** Retrieved from `ifconfig`.
+- **Default Gateway:** `ip route`.
+- **DNS Server:** `cat /etc/resolv.conf`.
+
+### CEO PC  
+- **OS Version**:  
+  - Command: `lsb_release -a`  
+  - **Result**: CentOS 6.4  
+  ![CEO PC OS Version](images/ceo-pc/ceo_os_version.png)
+
+- **IP Address**:  
+  - Command: `ip addr`  
+  - **Result**: `192.168.0.15/24`  
+  ![CEO PC IP Address](images/ceo-pc/ceo_new_ip.png)
+
+- **Subnet Mask**:  
+  - Command: `ifconfig`  
+  - **Result**: IP `192.168.0.15` with Subnet Mask `255.255.255.0`  
+  ![CEO PC Subnet Mask](images/ceo-pc/ceo_subnet.png)
+
+- **Default Gateway**:  
+  - Command: `ip route`  
+  - **Result**: Default Gateway `192.168.0.1`  
+  ![CEO PC Default Gateway](images/ceo-pc/ceo_default_gateway.png)
+
+- **DNS Server**:  
+  - Command: `cat /etc/resolv.conf`  
+  - **Result**: DNS Server `10.200.0.11`  
+  ![CEO PC DNS Server](images/ceo-pc/ceo_dns_server_new_ip.png)
+
+---
+
+### Web Server  
+- **OS Version**:  
+  - Command: `lsb_release -a`  
+  - **Result**: Ubuntu  
+  ![Web Server OS Version](images/web-server/webserver_os_version.png)
+
+- **IP Address and Subnet Mask**:  
+  - Command: `ifconfig`  
+  - **Result**: IP `10.200.0.12` with Subnet Mask `255.255.255.248`  
+  ![Web Server IP Address](images/web-server/webserver_if_config.png)
+
+- **Default Gateway**:  
+  - Command: `ip route`  
+  - **Result**: Default Gateway `10.200.0.9`
+  ![Web Server Default Gateway](images/web-server/webserver_ip_route.png)
+- **DNS Server**:  
+  - Command: `cat /etc/resolv.conf`  
+  - **Result**: DNS Server `10.200.0.11`
+  ![Web Server DNS Server](images/web-server/webserver_dns_server.png)
+---
+
+### DNS Server  
+- **OS Version**:  
+  - Command: `cat /etc/*rel*`  
+  - **Result**: CentOS 6.4  
+  ![DNS Server OS Version](images/dns-server/dns_server_os_version.png)
+
+- **IP Address and Subnet Mask**:  
+  - Command 1: `ip addr`  
+    - **Result**: IP `10.200.0.11/29`  
+    ![DNS Server IP Address](images/dns-server/dns_server_id_addr.png)
+
+  - Command 2: `ifconfig`  
+    - **Result**: IP `10.200.0.11` with Subnet Mask `255.255.255.248`  
+    ![DNS Server IP and Subnet Mask](images/dns-server/dns_server_if_config.png)
+
+- **Default Gateway**:  
+  - Command: `ip route`  
+  - **Result**: Default Gateway `10.200.0.9`  
+  ![DNS Server Default Gateway](images/dns-server/dns_server_default_Gateway.png)
+
+
+
+
 3. **Download Social Media Security Policy via FTP**  
    From the CEO PC, use FTP to download the policy document from the web server.
 
