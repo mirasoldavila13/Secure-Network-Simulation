@@ -6,6 +6,20 @@ This project simulates the setup, configuration, and security of a virtualized n
 This project demonstrates practical skills in deploying, configuring, and securing IT systems. Through troubleshooting, network analysis, and security baselining, this simulation provides hands-on experience in establishing network solutions tailored to operational and budgetary requirements.
 
 ---
+## Scenario
+You have been hired by an **IT company** as an **IT subject matter expert**. The management team has a **client who wants to upgrade their IT systems**, but the client has a **limited budget** and **no more physical space** to install new equipment. 
+
+To solve this issue, you suggest implementing **virtual machines** instead of additional hardware to help **reduce costs** and meet the client’s operational needs. As part of the upgrade, the following components will be installed:
+- **Firewall**
+- **CEO's PC**
+- **Internal Webserver**
+- **Internal DNS server**
+- **Linux machines** for monitoring and conducting cybersecurity tasks
+
+Once the new network is installed, your task is to **document configurations** and create a **security baseline** by scanning for **open ports**.
+
+
+---
 
 ## Technologies and Tools Used
 - **VirtualBox:** Used to create and manage virtual machines.
