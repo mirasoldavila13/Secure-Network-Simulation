@@ -60,7 +60,9 @@ Below are the key tasks completed during the project. The **detailed answers and
 ---
 
 ## Network Diagram
+Below is the network diagram showcasing the design and setup of the virtualized network.
 
+![Network Diagram](images/network-diagram/network_diagram.png)
 
 ---
 
