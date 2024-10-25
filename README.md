@@ -87,7 +87,58 @@ Once the new network is installed, your task is to **document configurations** a
 3. **Project Questions**  
    Submit the answers to the following questions:
 
-   - What style or type of DMZ is being deployed?
+   - What style or type of DMZ is being deployed?  
+       - <details>  
+           <summary>Expand to view the answer</summary>  
+
+          The DMZ being deployed is a **Three-Homed Firewall DMZ**, which is a type of **Single Firewall DMZ**.
+
+          ---
+
+          #### **Type: Single Firewall DMZ**  
+          A **Single Firewall DMZ** uses one firewall device (Router-FW) to manage and control traffic between the trusted network, the untrusted network, and the DMZ. This centralizes control over all traffic flows through a single point, simplifying management.
+
+          ---
+
+          #### **Design: Three-Homed Firewall DMZ**  
+          This design connects the firewall to **three separate networks**:
+
+          1. **Trusted Network (192.168.0.0/24):**  
+             Contains internal **virtual machines (VMs)**, including the **CEO PC** and **Kali Linux (Trusted)**, which must be protected from external threats.
+
+          2. **Untrusted Network (172.30.0.0/24):**  
+             Contains a **single Kali Linux (Untrusted) VM**, simulating external threats or attackers.
+
+          3. **DMZ (10.200.0.8/29):**  
+             Hosts public-facing **VMs**, including the **DNS Server**, **Web Server**, and **Kali Linux (DMZ)**. These VMs are accessible from the untrusted network but are **isolated from the trusted network** to protect sensitive internal systems.
+
+          ---
+
+          #### **Style: Isolated DMZ**  
+          The **Isolated DMZ style** ensures limited or no direct access between the DMZ and the trusted network. Here’s how the **Router-FW** enforces traffic control and isolation:
+
+          1. **No direct path between the trusted network and the DMZ:**  
+             - All communication between these networks must go **through the Router-FW**, ensuring strict control.  
+             - The **DMZ** acts as a buffer zone, allowing public-facing services (like the web and DNS servers) to interact with the untrusted network but **blocking access to sensitive systems** in the trusted network.
+
+          2. **Firewall as the single control point:**  
+             - The **Router-FW** allows or denies traffic between networks based on **predefined rules**.  
+             - **By default**, traffic between the **DMZ and trusted network** is **blocked**, unless specific rules explicitly allow it (e.g., to permit the CEO PC to access a web service in the DMZ).
+
+          3. **Best Practice for Security:**  
+             - Public services like **web and DNS servers** are placed in the **isolated DMZ** to ensure that if these services are compromised, they **cannot directly access the internal network**.
+
+          ---
+
+          #### **Summary:**  
+          This deployment uses a **Three-Homed Firewall design** with an **Isolated DMZ style**. It is classified as a **Single Firewall DMZ type** because all traffic is managed by one firewall. This approach enhances security by:
+          - **Controlling access** between trusted, untrusted, and DMZ networks.
+          - **Isolating the DMZ** to protect sensitive internal systems.
+          - **Limiting exposure** to external threats.
+
+      </details>
+
+
    - Describe any issues encountered on the CEO PC and how you resolved them.
    - List the OS version and IP configuration (IP address, subnet mask, gateway, and DNS server) of the CEO PC.
    - List the OS version and IP configuration of the Web Server.
