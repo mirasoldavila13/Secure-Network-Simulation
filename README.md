@@ -31,38 +31,30 @@ Once the new network is installed, your task is to **document configurations** a
 
 ## Tasks and Deliverables
 
-### Project Tasks
-1. **Install VirtualBox and Extensions**  
-   Follow the "Project 1 Getting Started" guide to install VirtualBox along with its necessary extensions.
+### Project Tasks  
 
-2. **Install Virtual Machines**  
-   Deploy the following VMs using VirtualBox:
-   - Router-FW  
-   - DNS Server  
-   - Web Server  
-   - CEO PC  
-   - Three Kali Linux machines (Kali-Trusted, Kali-Untrusted, and one within the DMZ)
+Below are the key tasks completed during the project. The **detailed answers and results** will be provided in the **Project Questions and Answers section**.
 
-3. **Verify Network Connectivity**  
-   Use the CEO PC’s Firefox browser to open [seclab.net](http://www.seclab.net). Troubleshoot any issues if the website fails to load.  
+1. **Verify Network Connectivity**  
+   Use the CEO PC’s Firefox browser to open [seclab.net](http://www.seclab.net). Troubleshoot any issues if the website fails to load.
    - Use Linux commands (e.g., `ping`) to diagnose network connectivity issues between machines.
 
-4. **Document IP Configuration**  
+2. **Document IP Configuration**  
    Record the OS version, IP address, subnet mask, default gateway, and DNS server address for the following:
    - CEO PC  
    - Web Server  
    - DNS Server
 
-5. **Download Social Media Security Policy via FTP**  
+3. **Download Social Media Security Policy via FTP**  
    From the CEO PC, use FTP to download the policy document from the web server.
 
-6. **Create a New User on the Web Server**  
+4. **Create a New User on the Web Server**  
    Add a new user with a chosen username and password on the web server.
 
-7. **Perform Port Scans Using Nmap**  
+5. **Perform Port Scans Using Nmap**  
    Use Nmap from a Kali Linux machine to scan the DNS and Web servers. Document all open ports and associated protocols.
 
-8. **Capture FTP Traffic with Wireshark**  
+6. **Capture FTP Traffic with Wireshark**  
    Use Wireshark on Kali Linux to monitor an FTP session between the CEO PC and the Web Server. Capture the username and password transmitted during the session.
 
 ---
@@ -84,7 +76,7 @@ Once the new network is installed, your task is to **document configurations** a
 2. **Demonstration**  
    Record a live demonstration of the CEO PC successfully opening [seclab.net](http://www.seclab.net) to verify network functionality. This recording will accompany the presentation.
 
-3. **Project Questions**  
+3. **Project Questions and Answers**  
    Submit the answers to the following questions:
 
    - What style or type of DMZ is being deployed?  
