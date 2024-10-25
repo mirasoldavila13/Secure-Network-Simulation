@@ -190,11 +190,71 @@ For each system, the following commands were used:
   ![DNS Server Default Gateway](images/dns-server/dns_server_default_Gateway.png)
 
 
-
+---
 
 3. **Download Social Media Security Policy via FTP**  
    From the CEO PC, use FTP to download the policy document from the web server.
+---
 
+#### **Solution: Download Social Media Security Policy via FTP**
+
+1. **Initiate FTP Connection**  
+   - **Command:** `ftp`  
+   - Opened an FTP connection to the **web server** with the command:  
+     ```bash
+     open 10.200.0.12
+     ```
+   - Entered the **username:** `jasper` and **password** when prompted.
+
+2. **List Available Files on FTP Server**  
+   - **Command:** `ls`  
+   - Entered **Passive Mode** and confirmed that the file **Social-Media-Security-Policy** was available:
+     ```text
+     April 16 2020  Social-Media-Security-Policy
+     ```
+
+   ![FTP List Command](images/ceo-pc/social-media-security-policy/ceo_pc_download_social_media_policy.png)
+
+3. **Download the Social Media Security Policy**  
+   - **Command:** `get Social-Media-Security-Policy`  
+   - The transfer was completed successfully, confirming that the file was downloaded.
+
+4. **Close the FTP Connection**  
+   - **Command:** `close`  
+     - Response: **221 Goodbye**  
+   - **Command:** `exit`  
+
+5. **Verify the Downloaded File**  
+   - **Command:** `ls`  
+   - Confirmed that the **Social-Media-Security-Policy** file was successfully downloaded to the CEO PC.
+
+   ![Verify Downloaded File](images/ceo-pc/social-media-security-policy/ceo_ls_social_media_security_policy.png)
+
+6. **Open the Social Media Security Policy Document**  
+   - Opened the **Social-Media-Security-Policy** file on the CEO PC to verify the content.
+
+   ![Open Social Media Security Policy](images/ceo-pc/social-media-security-policy/ceo_social_media_security_policy.png)
+   ### **Summary of the Social Media Security Policy**  
+   The **Social Media Security Policy** document is a **draft policy** for **Robot Parts, Inc.** It highlights the company’s strategic use of social media for marketing and business purposes, as well as the importance of protecting the organization from social media threats. Key points from the policy include:
+
+   1. **Importance of Social Media:**  
+      - Social media plays a critical role in promoting the company and interacting with customers to build brand awareness.
+
+   2. **Managing Social Media Risks:**  
+      - The company acknowledges the growing risks from the **social media threat landscape** and the need to protect its **reputation, customers, and employees** from these risks.
+
+   3. **Commitment to Cybersecurity Best Practices:**  
+      - The policy emphasizes adherence to **cybersecurity best practices** and holds the company accountable for responsible social media management.
+
+   4. **Access Management:**  
+      - The company will define tools and authorized personnel to manage social media accounts, though further details are to be added in the final version.
+
+   5. **Policy Review and Incident Response:**  
+      - The policy requires **annual reviews** and updates by the social media and cybersecurity teams.
+      - In the event of a **security incident**, the policy mandates immediate review to identify areas for improvement.
+
+
+---
 4. **Create a New User on the Web Server**  
    Add a new user with a chosen username and password on the web server.
 
