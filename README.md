@@ -6,30 +6,6 @@ This project simulates the setup, configuration, and security of a virtualized n
 This project demonstrates practical skills in deploying, configuring, and securing IT systems. Through troubleshooting, network analysis, and security baselining, this simulation provides hands-on experience in establishing network solutions tailored to operational and budgetary requirements.
 
 ---
-# Table of Contents
-
-1. [Overview](#overview)
-2. [Scenario](#scenario)
-3. [Technologies and Tools Used](#technologies-and-tools-used)
-4. [Tasks and Deliverables](#tasks-and-deliverables)
-   - [1. Verify Network Connectivity](#solution-verify-network-connectivity)
-   - [2. Document IP Configuration](#solution-document-ip-configuration)
-     - [CEO PC](#ceo-pc)
-     - [Web Server](#web-server)
-     - [DNS Server](#dns-server)
-   - [3. Download Social Media Security Policy via FTP](#solution-download-social-media-security-policy-via-ftp)
-   - [4. Create a New User on the Web Server](#solution-create-a-new-user-on-the-web-server)
-   - [5. Perform Port Scans Using Nmap](#solution-perform-port-scans-using-nmap)
-     - [Web Server Scan](#scan-on-web-server-10200012)
-     - [DNS Server Scan](#scan-on-dns-server-10200011)
-   - [6. Verify that the Trusted Network is Protected from the Untrusted Network](#solution-verify-network-protection)
-     - [Verify IP Address on Untrusted VM](#check-ip-address-of-the-kali-untrusted-vm)
-     - [Ping Tests Between Trusted and Untrusted VMs](#ping-from-kali-trusted-to-kali-untrusted-vm)
-   - [7. Capture FTP Traffic with Wireshark](#solution-capture-ftp-traffic-with-wireshark)
-     - [Initiate FTP Session from CEO PC](#step-1-initiate-ftp-session-from-ceo-pc)
-     - [Download the File and Monitor Traffic](#step-2-download-the-file-and-monitor-traffic)
-8. [Network Diagram](#network-diagram)
----
 ## Scenario
 You have been hired by an **IT company** as an **IT subject matter expert**. The management team has a **client who wants to upgrade their IT systems**, but the client has a **limited budget** and **no more physical space** to install new equipment. 
 
