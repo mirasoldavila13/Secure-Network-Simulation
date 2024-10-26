@@ -257,7 +257,7 @@ For each system, the following commands were used:
 ---
 4. **Create a New User on the Web Server**  
    Add a new user with a chosen username and password on the web server.
-#### **Solution: Create a New User on the Web Server**
+   #### **Solution: Create a New User on the Web Server**
 
 1. **Logged in as Root:**  
    - Already logged in as the `root` user on the web server.
@@ -286,7 +286,34 @@ For each system, the following commands were used:
 5. **Perform Port Scans Using Nmap**  
    Use Nmap from a Kali Linux machine to scan the DNS and Web servers. Document all open ports and associated protocols.
 
-6. **Capture FTP Traffic with Wireshark**  
+   #### **Solution: Perform Port Scans Using Nmap**
+
+1. **Scan on Web Server (10.200.0.12)**  
+   - Executed the following command:  
+     ```bash
+     nmap 10.200.0.12
+     ```
+   - **Result:** The scan revealed multiple open ports and services running on the web server, such as FTP, HTTP, and SSH.  
+     ![Nmap Web Server](images/kali-linux/trusted/nmap/kali_trusted_nmap_webserver.png)
+
+---
+
+2. **Scan on DNS Server (10.200.0.11)**  
+   - Executed the following command:  
+     ```bash
+     nmap 10.200.0.11
+     ```
+   - **Result:** The scan identified SSH and DNS services running on the DNS server.  
+     ![Nmap DNS Server](images/kali-linux/trusted/nmap/kali_trusted_nmap_dns_server.png)
+
+
+
+   These scans provide visibility into the services running on the **Web** and **DNS servers**, ensuring they align with expected configurations and highlighting any potential security exposures.
+---
+6. **Verify that the Trusted network is protected from the Untrusted network.**
+
+
+7. **Capture FTP Traffic with Wireshark**  
    Use Wireshark on Kali Linux to monitor an FTP session between the CEO PC and the Web Server. Capture the username and password transmitted during the session.
 
 ---
