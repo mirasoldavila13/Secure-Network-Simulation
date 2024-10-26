@@ -311,7 +311,36 @@ For each system, the following commands were used:
    These scans provide visibility into the services running on the **Web** and **DNS servers**, ensuring they align with expected configurations and highlighting any potential security exposures.
 ---
 6. **Verify that the Trusted network is protected from the Untrusted network.**
+   ### **Solution: Verify Network Protection**
 
+   Step 1. **Check IP Address of the Kali Untrusted VM**  
+   - Ran the `ifconfig` command on the **Kali Untrusted** virtual machine to confirm the IP address.  
+     - The IP address was **172.30.0.10**, which is **within the 172.30.0.0/24 Untrusted Network**, as indicated in the network diagram.
+
+   ![Kali Untrusted IP Address](images/kali-linux/untrusted/kali_untrusted_ifconfig.png)
+
+   Step 2. **Ping from Kali Trusted to Kali Untrusted VM**  
+   - From the **Kali Trusted** virtual machine, executed the following command to ping the **Kali Untrusted** machine:
+     ```bash
+     ping -c5 172.30.0.10
+     ```
+   - **Result:** The ping was **successful**, indicating that the **Kali Trusted** machine was able to communicate with the **Kali Untrusted** machine, as expected.
+
+   ![Ping from Trusted to Untrusted](images/kali-linux/trusted/kali_trusted_ping_kaliUntrusted.png)
+
+   Step 3. **Ping from Kali Untrusted to Kali Trusted VM**  
+   - From the **Kali Untrusted** virtual machine, attempted to ping the **Kali Trusted** machine:
+     ```bash
+     ping -c5 192.168.0.19
+     ```
+   - **Result:** The ping was **unsuccessful**, demonstrating that the **Trusted Network** was protected from the **Untrusted Network**.
+
+   ![Unsuccessful Ping from Untrusted to Trusted](images/kali-linux/untrusted/kaliUntrusted_unsucessful_ping_kali_trusted.png)
+
+   Step 4. **Referencing the Network Diagram**  
+   - As per the **network diagram**, the **Kali Trusted VM** is part of the **192.168.0.0/24 Trusted Network**, and the **Kali Untrusted VM** belongs to the **172.30.0.0/24 Untrusted Network**.  
+   - This configuration confirms the intended **network segmentation**, ensuring that traffic from the untrusted network is blocked from accessing the trusted network’s resources, as designed.
+---
 
 7. **Capture FTP Traffic with Wireshark**  
    Use Wireshark on Kali Linux to monitor an FTP session between the CEO PC and the Web Server. Capture the username and password transmitted during the session.
