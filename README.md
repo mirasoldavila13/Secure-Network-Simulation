@@ -344,7 +344,25 @@ For each system, the following commands were used:
 
 7. **Capture FTP Traffic with Wireshark**  
    Use Wireshark on Kali Linux to monitor an FTP session between the CEO PC and the Web Server. Capture the username and password transmitted during the session.
+   #### **Solution: Capture FTP Traffic with Wireshark**
+   ## Step 1: Initiate FTP Session from CEO PC
 
+      1. On the CEO PC, I used the `ftp` command.
+      2. I connected to the Web Server at IP address **10.200.0.12**.
+      3. Logged in with the username **jasper**.
+      4. Executed the `ls` command to display the available files, confirming the presence of the `Social-Media-Security-Policy`.
+
+   ![FTP session showing file listing](images/kali-linux/trusted/wireshark/wireshark_ftp.png)
+
+   ## Step 2: Download the File and Monitor Traffic
+
+      1. I used the `get Social-Media-Security-Policy` command to download the file.
+
+   ![Downloading Social-Media-Security-Policy](images/kali-linux/trusted/wireshark/whireshark_social_media.png)
+
+   2. In Wireshark, I captured the FTP login sequence, including the USER and PASS commands, revealing the username (jasper) and password (2hard2guess) transmitted in plaintext, followed by the 230 Login successful response.
+
+   ![Captured username, password, and FTP session details](images/kali-linux/trusted/wireshark/kali_trusted_ceo_usr_passwd.png)
 ---
 
 ## Network Diagram  
